@@ -1,0 +1,156 @@
+$primary: #e5352b;
+$primary-dark: #c62828;
+$primary-light: rgba(229, 53, 43, 0.1);
+
+$secondary: #4caf50;
+$secondary-dark: #2e7d32;
+$secondary-light: rgba(76, 175, 80, 0.1);
+
+$info: #333c41;
+
+/* 定义边框宽度变量 */
+$button-outline-width: 2px;
+
+/* Material Design 按钮基础样式 */
+.mdc-button {
+  width: 80%;
+  height: 48px;
+  border-radius: 24px; /* 减小圆角，增强精致感 */
+  /* 使用全局主色调变量 */
+  background-color: $primary;
+  color: white; /* 白色文字确保与深色背景的对比度 */
+  font-size: 16px;
+  font-weight: 500;
+  /* 双层阴影效果 */
+  box-shadow:
+    0 4px 4px rgba(0, 0, 0, 0.05),
+    /* 浅色次级阴影 */ 0 1px 4px rgba(0, 0, 0, 0.1); /* 深色主阴影 */
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  margin: 8px 0;
+  padding: 0 16px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 次要按钮样式 */
+.mdc-button--secondary {
+  background-color: $secondary;
+  box-shadow:
+    0 4px 4px rgba(76, 175, 80, 0.1),
+    0 1px 4px rgba(76, 175, 80, 0.2);
+}
+
+.mdc-button--secondary:active {
+  background-color: $secondary-dark;
+  box-shadow:
+    0 6px 8px rgba(76, 175, 80, 0.15),
+    0 3px 6px rgba(76, 175, 80, 0.25);
+}
+
+/* 描边按钮样式 - Outlined */
+.mdc-button--outlined {
+  background-color: transparent;
+  color: $primary;
+  border: $button-outline-width solid $primary;
+
+  /* 移除背景阴影，保留轻微边框阴影 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+  /* 光晕效果调整为与边框颜色匹配 */
+  &::before {
+    background: radial-gradient(
+      circle,
+      rgba(229, 53, 43, 0.2) 0%,
+      rgba(229, 53, 43, 0) 70%
+    );
+  }
+}
+
+/* 描边按钮点击状态 */
+.mdc-button--outlined:active {
+  background-color: $primary-light;
+  border-color: $primary-dark;
+  color: $primary-dark;
+  transform: translateY(1px);
+
+  /* 点击状态阴影调整 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 次要描边按钮样式 */
+.mdc-button--secondary.mdc-button--outlined {
+  color: $secondary;
+  border-color: $secondary;
+
+  &::before {
+    background: radial-gradient(
+      circle,
+      rgba(76, 175, 80, 0.2) 0%,
+      rgba(76, 175, 80, 0) 70%
+    );
+  }
+}
+
+/* 次要描边按钮点击状态 */
+.mdc-button--secondary.mdc-button--outlined:active {
+  background-color: $secondary-light;
+  border-color: $secondary-dark;
+  color: $secondary-dark;
+}
+
+/* 小型按钮样式 */
+.mdc-button--small {
+  height: 36px;
+  font-size: 14px;
+  padding: 0 12px;
+  border-radius: 18px;
+
+  /* 调整小型描边按钮的边框宽度 */
+  &.mdc-button--outlined {
+    border-width: $button-outline-width - 0.5px;
+  }
+}
+
+/* 大型按钮样式 */
+.mdc-button--large {
+  height: 56px;
+  font-size: 18px;
+  padding: 0 24px;
+  border-radius: 28px;
+
+  /* 调整大型描边按钮的边框宽度 */
+  &.mdc-button--outlined {
+    border-width: $button-outline-width + 0.5px;
+  }
+}
+
+/* 移除默认按钮边框 */
+.mdc-button::after {
+  border: none;
+}
+
+/* 按钮光晕效果 - 应用于所有按钮 */
+.mdc-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  transform: scale(0);
+  transition: transform 0.4s ease;
+}
+
+.mdc-button:active::before {
+  transform: scale(1);
+}

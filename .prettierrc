@@ -1,0 +1,22 @@
+{
+  "singleQuote": true,
+  "semi": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "printWidth": 80,
+  "singleAttributePerLine": true,
+  "plugins": ["prettier-plugin-organize-attributes"],
+  "attributeGroups": ["^class$", "^(id|name)$", "$DEFAULT", "^aria-"],
+  "attributeSort": "ASC",
+  "attributeIgnoreCase": true,
+  "overrides": [
+    {
+      "files": ["*.ttml", "*.wxml"],
+      "options": {
+        "parser": "html",
+        "singleAttributePerLine": true,
+        "printWidth": 60
+      }
+    }
+  ]
+}

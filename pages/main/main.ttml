@@ -1,0 +1,89 @@
+<view class="main-wrapper">
+  <view class="search-header">
+    <view class="search-container">
+      <input
+        class="search-input"
+        bindinput="onSearchInput"
+        placeholder="搜索钓点 或 钓区"
+        placeholder-style="color: #999;"
+      />
+      <button
+        class="search-button mdc-button"
+        bindtap="onSearch"
+      >
+        <text class="button-text">搜索</text>
+      </button>
+    </view>
+  </view>
+
+  <view class="tab-wrapper">
+    <view class="mdc-tab-bar">
+      <view class="mdc-tab-scroller">
+        <view class="mdc-tab-scroller__scroll-area">
+          <view class="mdc-tab-scroller__scroll-content">
+            <view 
+              class="mdc-tab {{activeTab === 'latest' ? 'mdc-tab--active' : ''}}" 
+              bindtap="onTabClick" 
+              data-tab="latest"
+            >
+              <view class="mdc-tab__content">
+                <text class="mdc-tab__text-label">最新钓点</text>
+              </view>
+              <view class="mdc-tab-indicator {{activeTab === 'latest' ? 'mdc-tab-indicator--active' : ''}}">
+                <view class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></view>
+              </view>
+            </view>
+            
+            <view 
+              class="mdc-tab {{activeTab === 'hottest' ? 'mdc-tab--active' : ''}}" 
+              bindtap="onTabClick" 
+              data-tab="hottest"
+            >
+              <view class="mdc-tab__content">
+                <text class="mdc-tab__text-label">最热钓点</text>
+              </view>
+              <view class="mdc-tab-indicator {{activeTab === 'hottest' ? 'mdc-tab-indicator--active' : ''}}">
+                <view class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></view>
+              </view>
+            </view>
+            
+            <view 
+              class="mdc-tab {{activeTab === 'highest' ? 'mdc-tab--active' : ''}}" 
+              bindtap="onTabClick" 
+              data-tab="highest"
+            >
+              <view class="mdc-tab__content">
+                <text class="mdc-tab__text-label">评分最高</text>
+              </view>
+              <view class="mdc-tab-indicator {{activeTab === 'highest' ? 'mdc-tab-indicator--active' : ''}}">
+                <view class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="list-content">
+    <view class="list-item" wx:for="{{listData}}" wx:key="id">
+      <view class="item-content">
+        <view class="item-header">
+          <text class="item-title">{{item.title}}123321</text>
+          <text class="item-rating">{{item.rating}}321321</text>
+        </view>
+        <view class="item-body">
+          <text class="item-description">{{item.description}}123321</text>
+        </view>
+        <view class="item-footer">
+          <text class="item-location">{{item.location}}123321</text>
+          <text class="item-distance">{{item.distance}}321123</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="footer">
+    <text class="footer-text">© 2024 My Application</text>
+  </view>
+</view>
