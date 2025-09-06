@@ -1,0 +1,37 @@
+.history-page {
+    padding: 16px;
+    background-color: #f8fafc;
+}
+
+.header {
+    margin-bottom: 16px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1e293b;
+}
+
+.history-list {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.item-name {
+    font-size: 16px;
+    color: #1e293b;
+}
+
+.item-time {
+    font-size: 14px;
+    color: #64748b;
+}

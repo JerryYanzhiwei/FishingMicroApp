@@ -6,6 +6,53 @@ Page({
   data: {
     searchQuery: '',
     activeTab: 'latest', // 默认选中"最新钓点"
+    listData: [
+      {
+        id: 1,
+        imageUrl: 'https://picsum.photos/200/300',
+        title: '西湖钓点',
+        description: '风景优美，适合休闲钓鱼',
+        location: '杭州市西湖区',
+        distance: 5.2,
+        rating: 4.5,
+      },
+      {
+        id: 2,
+        imageUrl: 'https://picsum.photos/200/300',
+        title: '千岛湖钓点',
+        description: '水质清澈，鱼类丰富',
+        location: '杭州市淳安县',
+        distance: 120,
+        rating: 4.8,
+      },
+      {
+        id: 2,
+        imageUrl: 'https://picsum.photos/200/300',
+        title: '千岛湖钓点',
+        description: '水质清澈，鱼类丰富',
+        location: '杭州市淳安县',
+        distance: 120,
+        rating: 4.8,
+      },
+      {
+        id: 2,
+        imageUrl: 'https://picsum.photos/200/300',
+        title: '千岛湖钓点',
+        description: '水质清澈，鱼类丰富',
+        location: '杭州市淳安县',
+        distance: 120,
+        rating: 4.8,
+      },
+      {
+        id: 2,
+        imageUrl: 'https://picsum.photos/200/300',
+        title: '千岛湖钓点',
+        description: '水质清澈，鱼类丰富',
+        location: '杭州市淳安县',
+        distance: 120,
+        rating: 4.8,
+      },
+    ],
   },
 
   onLoad: function (options) {
@@ -72,5 +119,19 @@ Page({
     };
 
     return tabNames[tab] || '';
+  },
+
+  toDetail: function (e: { currentTarget: { dataset: { id: number } } }) {
+    const { id } = e.currentTarget.dataset;
+    console.log('跳转详情，钓点ID:', id);
+    tt.navigateTo({
+      url: `/pages/detail/detail?id=${id}`,
+      success: (res) => {
+        console.log('跳转成功');
+      },
+      fail: (res) => {
+        console.error('跳转失败:', res);
+      },
+    });
   },
 });

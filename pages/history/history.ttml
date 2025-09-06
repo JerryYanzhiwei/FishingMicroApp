@@ -1,0 +1,12 @@
+<view class="history-page">
+    <view class="header">
+        <text class="title">浏览历史</text>
+    </view>
+    <view class="history-list">
+        <!-- 历史记录列表 -->
+        <view class="history-item" tt:for="{{historyList}}" tt:key="id">
+            <text class="item-name">{{item.name}}</text>
+            <text class="item-time">{{item.time}}</text>
+        </view>
+    </view>
+</view>

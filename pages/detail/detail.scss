@@ -1,0 +1,251 @@
+.detail-scroll {
+  height: 100vh;
+  width: 100%;
+}
+
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+}
+
+.map-container {
+    height: 40vh;
+    width: 100%;
+}
+
+.map {
+    width: 100%;
+    height: 100%;
+}
+
+.spot-name {
+    padding: 16px;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.spot-address {
+    padding: 16px;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.address-label {
+    font-size: 14px;
+    color: #666;
+}
+
+.address {
+    font-size: 14px;
+    color: #333;
+}
+
+.surroundings {
+    padding: 16px;
+    background-color: #fff;
+    margin-top: 8px;
+}
+
+.surroundings-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.surroundings-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.surrounding-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.item-name {
+    font-size: 14px;
+    color: #333;
+}
+
+.item-distance {
+    font-size: 14px;
+    color: #999;
+}
+
+.footer-button {
+    padding: 16px;
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+}
+
+.navigate-button {
+    width: 100%;
+    height: 48px;
+    background-color: #07c160;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigate-button::after {
+    border: none;
+}
+
+.fish-types {
+  padding: 16px;
+  background: linear-gradient(135deg, #f6f9fc 0%, #eef2f6 100%);
+  border-radius: 12px;
+  margin: 16px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.surroundings-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.surrounding-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.item-name {
+    font-size: 14px;
+    color: #333;
+}
+
+.item-distance {
+    font-size: 14px;
+    color: #999;
+}
+
+.footer-button {
+    padding: 16px;
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+}
+
+.navigate-button {
+    width: 100%;
+    height: 48px;
+    background-color: #07c160;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigate-button::after {
+    border: none;
+}
+
+.fish-types {
+  padding: 16px;
+  background: linear-gradient(135deg, #f6f9fc 0%, #eef2f6 100%);
+  border-radius: 12px;
+  margin: 16px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.fish-list {
+  white-space: nowrap;
+  padding-bottom: 8px;
+}
+
+.fish-card {
+  display: inline-flex;
+  flex-direction: column;
+  width: 120px;
+  height: 160px;
+  background: white;
+  border-radius: 10px;
+  margin-right: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  
+  &:active {
+    transform: scale(0.98);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.fish-avatar {
+  width: 100%;
+  height: 80px;
+  background: #f0f4f8;
+}
+
+.fish-info {
+  padding: 8px 10px;
+}
+
+.fish-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #34495e;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tag {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.habit-tag {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.bait-tag {
+  background: #e8f5e9;
+  color: #388e3c;
+}

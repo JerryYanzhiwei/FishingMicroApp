@@ -18,7 +18,7 @@
         class="mdc-button"
         bindtap="unlockFinSpot"
       >
-        解锁更多钓点功能
+        解锁更多钓点信息
       </button>
     </view>
   </view>

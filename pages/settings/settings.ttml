@@ -1,0 +1,15 @@
+<view class="settings-page">
+    <view class="header">
+        <text class="title">设置</text>
+    </view>
+    <view class="settings-list">
+        <view class="settings-item">
+            <text class="item-name">通知设置</text>
+            <switch checked="{{notifyEnabled}}" bindchange="toggleNotify" />
+        </view>
+        <view class="settings-item">
+            <text class="item-name">隐私政策</text>
+            <image class="item-arrow" src="/assets/icons/arrow_right.png" />
+        </view>
+    </view>
+</view>

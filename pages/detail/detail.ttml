@@ -1,0 +1,75 @@
+<scroll-view class="detail-scroll" scroll-y>
+  <view class="detail-container">
+    <!-- 地图区域 -->
+    <view class="map-container">
+      <map
+        class="map"
+        id="detail-map"
+        latitude="{{latitude}}"
+        longitude="{{longitude}}"
+        markers="{{markers}}"
+        scale="16"
+        show-location="{{true}}"
+      ></map>
+    </view>
+
+    <!-- 钓点名称 -->
+    <view class="spot-name">
+      <text class="name">{{spotName}}</text>
+    </view>
+
+    <!-- 详细地址 -->
+    <view class="spot-address">
+      <text class="address-label">地址：</text>
+      <text class="address">{{address}}</text>
+    </view>
+
+    <!-- 钓鱼鱼类 -->
+    <view class="fish-types">
+      <text class="section-title">🎣 可钓鱼类</text>
+      <scroll-view class="fish-list" scroll-x>
+        <view 
+          class="fish-card" 
+          tt:for="{{fishTypes}}" 
+          tt:key="id"
+          bindtap="showFishDetail"
+          data-id="{{item.id}}"
+        >
+          <image class="fish-avatar" src="{{item.icon}}" mode="aspectFill" />
+          <view class="fish-info">
+            <text class="fish-name">{{item.name}}</text>
+            <view class="tag-group">
+              <text class="tag habit-tag">{{item.habits}}</text>
+              <text class="tag bait-tag">{{item.baits}}</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <!-- 周边信息 -->
+    <view class="surroundings">
+      <text class="surroundings-title">周边设施</text>
+      <view class="surroundings-list">
+        <view
+          class="surrounding-item"
+          tt:for="{{surroundings}}"
+          tt:key="id"
+        >
+          <text class="item-name">{{item.name}}</text>
+          <text class="item-distance">{{item.distance}} km</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 底部导航按钮 -->
+    <view class="footer-button">
+      <button
+        class="navigate-button"
+        bindtap="navigateToSpot"
+      >
+        导航到此处
+      </button>
+    </view>
+  </view>
+</scroll-view>

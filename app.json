@@ -1,37 +1,40 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/main/main",
-    "pages/userCenter/userCenter"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#e5352b",
-    "navigationBarTitleText": "Fin Spot Finder",
-    "navigationBarTextStyle": "white"
-  },
-  "tabBar": {
-    "color": "#999999",
-    "selectedColor": "#e5352b",
-    "borderStyle": "white",
-    "list": [
-      {
-        "iconPath": "assets/icons/home.png",
-        "selectedIconPath": "assets/icons/home_active.png",
-        "pagePath": "pages/main/main",
-        "text": "首页"
-      },
-      {
-        "iconPath": "assets/icons/user.png",
-        "selectedIconPath": "assets/icons/user_active.png",
-        "pagePath": "pages/userCenter/userCenter",
-        "text": "我的"
-      }
-    ]
-  },
-  "permission": {
-    "scope.userLocation": {
-      "desc": "用于提供个性化服务及体验"
+    "pages": [
+        "pages/index/index",
+        "pages/main/main",
+        "pages/userCenter/userCenter",
+        "pages/detail/detail",
+        "pages/history/history",
+        "pages/settings/settings"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#e5352b",
+        "navigationBarTitleText": "Fin Spot Finder",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#999999",
+        "selectedColor": "#e5352b",
+        "borderStyle": "white",
+        "list": [
+            {
+                "iconPath": "assets/icons/home.png",
+                "selectedIconPath": "assets/icons/home_active.png",
+                "pagePath": "pages/main/main",
+                "text": "首页"
+            },
+            {
+                "iconPath": "assets/icons/user.png",
+                "selectedIconPath": "assets/icons/user_active.png",
+                "pagePath": "pages/userCenter/userCenter",
+                "text": "我的"
+            }
+        ]
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "用于提供个性化服务及体验"
+        }
     }
-  }
 }

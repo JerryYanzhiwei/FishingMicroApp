@@ -66,24 +66,26 @@
   </view>
 
   <view class="list-content">
-    <view class="list-item" wx:for="{{listData}}" wx:key="id">
-      <view class="item-content">
-        <view class="item-header">
-          <text class="item-title">{{item.title}}123321</text>
-          <text class="item-rating">{{item.rating}}321321</text>
+    <view class="list-item" tt:for="{{listData}}" tt:key="id">
+        <view bindtap="toDetail" data-id="{{item.id}}" class="item-content">
+            <image class="item-image" src="{{item.imageUrl}}" mode="aspectFill" />
+            <view class="item-details">
+                <view class="item-header">
+                    <text class="item-title">{{item.title}}</text>
+                    <view class="item-rating">
+                        <text class="rating-value">{{item.rating}}</text>
+                        <text class="rating-icon">★</text>
+                    </view>
+                </view>
+                <view class="item-body">
+                    <text class="item-description">{{item.description}}</text>
+                </view>
+                <view class="item-footer">
+                    <text class="item-location">{{item.location}}</text>
+                    <text class="item-distance">{{item.distance}} km</text>
+                </view>
+            </view>
         </view>
-        <view class="item-body">
-          <text class="item-description">{{item.description}}123321</text>
-        </view>
-        <view class="item-footer">
-          <text class="item-location">{{item.location}}123321</text>
-          <text class="item-distance">{{item.distance}}321123</text>
-        </view>
-      </view>
     </view>
-  </view>
-
-  <view class="footer">
-    <text class="footer-text">© 2024 My Application</text>
   </view>
 </view>

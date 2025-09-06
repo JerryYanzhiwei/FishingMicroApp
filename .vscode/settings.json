@@ -9,6 +9,7 @@
   "prettier.ignorePath": ".prettierignore",
   "prettier.documentSelectors": ["**/*.ttml"],
   // 文件关联配置
+
   "files.associations": {
     "*.ttml": "html"
   },

@@ -1,2 +1,32 @@
-<!-- f:\FinSpotFinder\FinSpotFinder\pages\userCenter\userCenter.ttml -->
-<text>f:\FinSpotFinder\FinSpotFinder\pages\userCenter\userCenter.ttml</text>
+<view class="user-center">
+    <!-- 用户信息区域 -->
+    <view class="user-info">
+        <image class="avatar" src="{{userInfo.avatar || '/assets/icons/user.png'}}" />
+        <view class="info-right">
+            <text class="username">{{userInfo.nickname || '未登录'}}</text>
+            <text class="user-id">ID: {{userInfo.userId || '--'}}</text>
+        </view>
+    </view>
+
+    <!-- 功能入口 -->
+    <view class="function-list">
+        <view class="function-item" bindtap="navigateToMySpots">
+            <image class="item-icon" src="/assets/icons/fishing_marker.png" />
+            <text class="item-text">我的钓点</text>
+            <image class="item-arrow" src="/assets/icons/arrow_right.png" />
+        </view>
+        <view class="function-item" bindtap="navigateToHistory">
+            <image class="item-icon" src="/assets/icons/history.png" />
+            <text class="item-text">浏览历史</text>
+            <image class="item-arrow" src="/assets/icons/arrow_right.png" />
+        </view>
+        <view class="function-item" bindtap="navigateToSettings">
+            <image class="item-icon" src="/assets/icons/settings.png" />
+            <text class="item-text">设置</text>
+            <image class="item-arrow" src="/assets/icons/arrow_right.png" />
+        </view>
+    </view>
+
+    <!-- 退出登录按钮 -->
+    <button class="logout-btn" bindtap="handleLogout">退出登录</button>
+</view>
