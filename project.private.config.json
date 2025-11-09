@@ -4,5 +4,9 @@
             "current": -1,
             "list": []
         }
+    },
+    "setting": {
+        "urlCheck": true,
+        "compileHotReLoad": true
     }
 }

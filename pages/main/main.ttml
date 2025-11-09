@@ -34,7 +34,7 @@
               </view>
             </view>
             
-            <view 
+            <!-- <view 
               class="mdc-tab {{activeTab === 'hottest' ? 'mdc-tab--active' : ''}}" 
               bindtap="onTabClick" 
               data-tab="hottest"
@@ -45,7 +45,7 @@
               <view class="mdc-tab-indicator {{activeTab === 'hottest' ? 'mdc-tab-indicator--active' : ''}}">
                 <view class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></view>
               </view>
-            </view>
+            </view> -->
             
             <view 
               class="mdc-tab {{activeTab === 'highest' ? 'mdc-tab--active' : ''}}" 
@@ -67,18 +67,18 @@
 
   <view class="list-content">
     <view class="list-item" tt:for="{{listData}}" tt:key="id">
-        <view bindtap="toDetail" data-id="{{item.id}}" class="item-content">
-            <image class="item-image" src="{{item.imageUrl}}" mode="aspectFill" />
+        <view bindtap="toDetail" data-longitude="{{item.longitude}}" data-latitude={{item.latitude}} data-id="{{item._id}}" class="item-content">
+            <image class="item-image" src="{{item.imgUrl}}" mode="aspectFill" />
             <view class="item-details">
                 <view class="item-header">
                     <text class="item-title">{{item.title}}</text>
                     <view class="item-rating">
-                        <text class="rating-value">{{item.rating}}</text>
+                        <text class="rating-value">{{item.rate}}</text>
                         <text class="rating-icon">★</text>
                     </view>
                 </view>
                 <view class="item-body">
-                    <text class="item-description">{{item.description}}</text>
+                    <text class="item-description">{{item.desc}}</text>
                 </view>
                 <view class="item-footer">
                     <text class="item-location">{{item.location}}</text>

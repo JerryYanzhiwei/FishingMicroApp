@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/index/index",
         "pages/main/main",
+        "pages/index/index",
         "pages/userCenter/userCenter",
         "pages/detail/detail",
         "pages/history/history",
@@ -11,7 +11,8 @@
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#e5352b",
         "navigationBarTitleText": "Fin Spot Finder",
-        "navigationBarTextStyle": "white"
+        "navigationBarTextStyle": "white",
+        "disableSwipeBack": true
     },
     "tabBar": {
         "color": "#999999",
@@ -23,12 +24,6 @@
                 "selectedIconPath": "assets/icons/home_active.png",
                 "pagePath": "pages/main/main",
                 "text": "首页"
-            },
-            {
-                "iconPath": "assets/icons/user.png",
-                "selectedIconPath": "assets/icons/user_active.png",
-                "pagePath": "pages/userCenter/userCenter",
-                "text": "我的"
             }
         ]
     },

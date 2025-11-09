@@ -1,5 +1,7 @@
 // f:\FinSpotFinder\FinSpotFinder\pages\main\main.ts
 
+import { finSpotApi } from "../../api";
+
 type TabPropsType = 'hottest' | 'latest' | 'highest';
 
 Page({
@@ -14,49 +16,15 @@ Page({
         description: '风景优美，适合休闲钓鱼',
         location: '杭州市西湖区',
         distance: 5.2,
-        rating: 4.5,
-      },
-      {
-        id: 2,
-        imageUrl: 'https://picsum.photos/200/300',
-        title: '千岛湖钓点',
-        description: '水质清澈，鱼类丰富',
-        location: '杭州市淳安县',
-        distance: 120,
-        rating: 4.8,
-      },
-      {
-        id: 2,
-        imageUrl: 'https://picsum.photos/200/300',
-        title: '千岛湖钓点',
-        description: '水质清澈，鱼类丰富',
-        location: '杭州市淳安县',
-        distance: 120,
-        rating: 4.8,
-      },
-      {
-        id: 2,
-        imageUrl: 'https://picsum.photos/200/300',
-        title: '千岛湖钓点',
-        description: '水质清澈，鱼类丰富',
-        location: '杭州市淳安县',
-        distance: 120,
-        rating: 4.8,
-      },
-      {
-        id: 2,
-        imageUrl: 'https://picsum.photos/200/300',
-        title: '千岛湖钓点',
-        description: '水质清澈，鱼类丰富',
-        location: '杭州市淳安县',
-        distance: 120,
-        rating: 4.8,
+        rate: 4.5,
+        record: 100,
       },
     ],
   },
 
   onLoad: function (options) {
     // 页面加载时的初始化逻辑
+    this.getSpotList()
   },
 
   onReady: function () {
@@ -70,21 +38,7 @@ Page({
   },
 
   onSearch: function () {
-    const { searchQuery } = this.data;
-
-    if (searchQuery.trim()) {
-      console.log('执行搜索:', searchQuery);
-      // 这里可以添加实际搜索逻辑
-      tt.showToast({
-        title: `搜索: ${searchQuery}`,
-        icon: 'none',
-      });
-    } else {
-      tt.showToast({
-        title: '请输入搜索内容',
-        icon: 'none',
-      });
-    }
+    this.getSpotList()
   },
 
   // 处理标签点击
@@ -99,9 +53,25 @@ Page({
     this.loadDataByTab(tab);
   },
 
+  // 获取钓点列表
+  getSpotList: function () {
+    finSpotApi.getSpotList({page: 1, pageSize: 100, keyword: this.data.searchQuery}).then((res) => {
+      this.setData({
+        listData: res,
+      })
+    })
+  },
+
   // 根据选中的标签加载对应数据
   loadDataByTab: function (tab: TabPropsType) {
-    console.log(`加载${this.getTabName(tab)}数据`);
+    if (tab === 'highest') {
+      this.setData({
+        listData: this.data.listData.sort((a, b) => b.rate - a.rate), // 按评分排序
+      });
+    }
+    if (tab === 'latest') {
+      this.getSpotList()
+    }
 
     // 这里可以添加实际的数据加载逻辑
     tt.showToast({
@@ -121,11 +91,10 @@ Page({
     return tabNames[tab] || '';
   },
 
-  toDetail: function (e: { currentTarget: { dataset: { id: number } } }) {
-    const { id } = e.currentTarget.dataset;
-    console.log('跳转详情，钓点ID:', id);
+  toDetail: function (e: { currentTarget: { dataset: { id: number,longitude: number, latitude: number  } } }) {
+    const { id, longitude, latitude } = e.currentTarget.dataset;
     tt.navigateTo({
-      url: `/pages/detail/detail?id=${id}`,
+      url: `/pages/index/index?id=${id}&longitude=${longitude}&latitude=${latitude}`,
       success: (res) => {
         console.log('跳转成功');
       },

@@ -3,14 +3,12 @@
     <map
       class="map-wrapper"
       id="finMap"
-      enable-scroll="{{enableScroll}}"
-      enableTraffic="{{enableTraffic}}"
       latitude="{{latitude}}"
       longitude="{{longitude}}"
       scale="{{scale}}"
-      show-compass="{{true}}"
-      show-location="{{true}}"
-      show-scale="{{true}}"
+      markers="{{markers}}"
+      show-location="true"
+      disable-zoom="true"
     ></map>
 
     <view class="info-wrapper">
@@ -18,7 +16,7 @@
         class="mdc-button"
         bindtap="unlockFinSpot"
       >
-        解锁更多钓点信息
+        立即广告解锁钓点位置
       </button>
     </view>
   </view>
@@ -29,9 +27,9 @@
       <button class="mdc-button mdc-button--secondary mdc-button--grouped-left" bindtap="navigateToMainPage">
         更多同城钓点
       </button>
-      <button class="mdc-button mdc-button--secondary mdc-button--grouped-right">
+      <!-- <button class="mdc-button mdc-button--secondary mdc-button--grouped-right">
         分享钓点
-      </button>
+      </button> -->
     </view>
   </view>
 </view>
