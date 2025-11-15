@@ -33,6 +33,19 @@
                 <view class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></view>
               </view>
             </view>
+
+            <view 
+              class="mdc-tab {{activeTab === 'nearest' ? 'mdc-tab--active' : ''}}" 
+              bindtap="onTabClick" 
+              data-tab="nearest"
+            >
+              <view class="mdc-tab__content">
+                <text class="mdc-tab__text-label">距离最近</text>
+              </view>
+              <view class="mdc-tab-indicator {{activeTab === 'nearest' ? 'mdc-tab-indicator--active' : ''}}">
+                <view class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></view>
+              </view>
+            </view>
             
             <!-- <view 
               class="mdc-tab {{activeTab === 'hottest' ? 'mdc-tab--active' : ''}}" 

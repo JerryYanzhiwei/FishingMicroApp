@@ -231,7 +231,7 @@ Page({
 
   // 跳转到main页面
   navigateToMainPage() {
-    tt.switchTab({
+    tt.redirectTo({
       url: '/pages/main/main',
       success() {
         console.log('成功跳转到main页面');

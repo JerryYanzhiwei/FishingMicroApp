@@ -1,35 +1,28 @@
 {
-    "pages": [
-        "pages/main/main",
-        "pages/index/index",
-        "pages/userCenter/userCenter",
-        "pages/detail/detail",
-        "pages/history/history",
-        "pages/settings/settings"
-    ],
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#e5352b",
-        "navigationBarTitleText": "Fin Spot Finder",
-        "navigationBarTextStyle": "white",
-        "disableSwipeBack": true
-    },
-    "tabBar": {
-        "color": "#999999",
-        "selectedColor": "#e5352b",
-        "borderStyle": "white",
-        "list": [
-            {
-                "iconPath": "assets/icons/home.png",
-                "selectedIconPath": "assets/icons/home_active.png",
-                "pagePath": "pages/main/main",
-                "text": "首页"
-            }
-        ]
-    },
-    "permission": {
-        "scope.userLocation": {
-            "desc": "用于提供个性化服务及体验"
-        }
+  "pages": [
+    "pages/main/main",
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/history/history",
+    "pages/settings/settings",
+    "pages/userCenter/userCenter"
+  ],
+  "window": {
+    "navigationBarTitleText": "FinSpotFinder"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于获取您的位置信息，以便推荐附近优质钓点和提供精准导航服务"
     }
+  },
+  "requiredPrivateInfos": ["scope.userLocation"],
+  "privacy": {
+    "requiredPrivateInfos": ["scope.userLocation"],
+    "statement": {
+      "default": {
+        "title": "隐私政策",
+        "content": "我们需要获取您的位置信息以提供以下服务：1. 推荐附近钓点；2. 提供钓点导航；3. 显示钓点距离。我们承诺仅在使用相关功能时获取位置信息，不会将您的位置数据用于其他用途。您可以在小程序设置中随时关闭位置权限。"
+      }
+    }
+  }
 }

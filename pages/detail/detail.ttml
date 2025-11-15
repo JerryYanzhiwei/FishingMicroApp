@@ -19,7 +19,7 @@
     </view>
 
     <!-- 钓鱼鱼类 -->
-    <view tt:if="{{fishTypes.length > 0}}" class="fish-types">
+    <!-- <view tt:if="{{fishTypes.length > 0}}" class="fish-types">
       <text class="section-title">🎣 可钓鱼类</text>
       <scroll-view class="fish-list" scroll-x>
         <view 
@@ -32,20 +32,16 @@
           <image class="fish-avatar" src="{{item.icon}}" mode="aspectFill" />
           <view class="fish-info">
             <text class="fish-name">{{item.name}}</text>
-            <!-- <view class="tag-group">
-              <text class="tag habit-tag">{{item.habits}}</text>
-              <text class="tag bait-tag">{{item.baits}}</text>
-            </view> -->
           </view>
         </view>
       </scroll-view>
-    </view>
+    </view> -->
 
      <!-- desc -->
-    <view class="spot-address">
+    <!-- <view class="spot-address">
       <text class="address-label">特点: </text>
       <text class="address">{{desc}}</text>
-    </view>
+    </view> -->
 
     <!-- 详细地址 -->
     <view class="spot-address">
@@ -69,13 +65,13 @@
     </view> -->
 
     <!-- 底部导航按钮 -->
-    <!-- <view class="footer-button">
+    <view class="footer-button">
       <button
         class="navigate-button"
         bindtap="navigateToSpot"
       >
         导航到此处
       </button>
-    </view> -->
+    </view>
   </view>
 </scroll-view>
